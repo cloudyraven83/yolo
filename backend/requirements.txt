@@ -1,0 +1,10 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+SQLAlchemy>=2.0
+pydantic>=2.6
+PyJWT>=2.8
+PyYAML>=6.0
+requests>=2.31
+opencv-python>=4.9
+# "摄像头 + YOLO" 真跑通道所需依赖（含 torch，体积约 2GB）在
+# requirements-yolo.txt 中单独提供，默认模拟通道无需安装。

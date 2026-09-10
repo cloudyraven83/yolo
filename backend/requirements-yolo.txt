@@ -1,0 +1,4 @@
+# 可选：YOLO 摄像头真跑通道依赖（体积较大，含 torch 约 2GB）
+# 仅在需要 "摄像头实时检测" 演示通道时安装：
+#   pip install -r requirements-yolo.txt
+ultralytics>=8.2

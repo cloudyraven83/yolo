@@ -1,0 +1,10 @@
+# YOLO 数据集规范占位（阶段二填充）
+# 目录约定：
+#   data/drinks/images/train  data/drinks/images/val
+#   data/drinks/labels/train  data/drinks/labels/val   (YOLO txt 标注)
+path: ./data/drinks
+train: images/train
+val: images/val
+
+# 阶段二按实际标注类别填写，并在 configs/drinks.yaml 的 label_mapping 中映射到商品
+names: []

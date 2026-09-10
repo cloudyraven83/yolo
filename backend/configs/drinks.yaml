@@ -1,0 +1,23 @@
+# 饮料识别与售货配置
+# 阶段一：weights 为预训练权重（首次使用自动下载 yolov8n.pt）。
+# 阶段二：自定义数据集训练完成后，将 weights 改为 models/best.pt，
+# 并在 label_mapping 中补充 "模型类别名: 商品名" 映射，业务层零改动。
+model:
+  weights: "yolov8n.pt"
+  conf_threshold: 0.25
+  label_mapping: {}
+    # bottle: 矿泉水        # 示例：阶段二按自定义类别名映射到商品
+
+camera:
+  camera_id: 0              # 摄像头编号，可被环境变量 CAMERA_ID 覆盖
+
+# 商品与货道初始数据（seed 时写入 SQLite）
+products:
+  - {name: 可口可乐, brand: 可口可乐, price: 3.5, unit: 瓶, lane: A1, capacity: 8, stock: 6, threshold: 2}
+  - {name: 雪碧,     brand: 可口可乐, price: 3.5, unit: 瓶, lane: A2, capacity: 8, stock: 6, threshold: 2}
+  - {name: 冰红茶,   brand: 康师傅,   price: 3.0, unit: 瓶, lane: A3, capacity: 8, stock: 5, threshold: 2}
+  - {name: 矿泉水,   brand: 农夫山泉, price: 2.0, unit: 瓶, lane: A4, capacity: 10, stock: 8, threshold: 2}
+  - {name: 橙汁,     brand: 美汁源,   price: 4.0, unit: 瓶, lane: B1, capacity: 8, stock: 6, threshold: 2}
+  - {name: 拿铁咖啡, brand: 雀巢,     price: 6.0, unit: 瓶, lane: B2, capacity: 6, stock: 4, threshold: 1}
+  - {name: 酸奶,     brand: 蒙牛,     price: 5.0, unit: 杯, lane: B3, capacity: 6, stock: 3, threshold: 2}
+  - {name: 绿茶,     brand: 统一,     price: 3.0, unit: 瓶, lane: B4, capacity: 8, stock: 6, threshold: 2}
